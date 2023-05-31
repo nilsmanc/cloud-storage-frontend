@@ -3,6 +3,10 @@ import styles from './Auth.module.scss'
 import { Button, Form, Input, message } from 'antd'
 
 export const LoginForm: React.FC = () => {
+  const onSubmit = (values: any) => {
+    console.log(values)
+  }
+
   return (
     <div className={styles.formBlock}>
       <Form
@@ -10,6 +14,7 @@ export const LoginForm: React.FC = () => {
         labelCol={{
           span: 8,
         }}
+        onFinish={onSubmit}
       >
         <Form.Item
           label="E-mail"
