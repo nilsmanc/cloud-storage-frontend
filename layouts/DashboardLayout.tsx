@@ -1,19 +1,19 @@
-import React from "react";
-import styles from "@/styles/Home.module.scss";
-import { useRouter } from "next/router";
-import { UploadButton } from "@/components/UploadButton";
-import { Menu } from "antd";
+import React from 'react'
+import styles from '@/styles/Home.module.scss'
+import { useRouter } from 'next/router'
+import { UploadButton } from '@/components/UploadButton'
+import { Menu } from 'antd'
 import {
   DeleteOutlined,
   FileImageOutlined,
   FileOutlined,
-} from "@ant-design/icons";
+} from '@ant-design/icons'
 
 export const DashboardLayout: React.FC<React.PropsWithChildren> = ({
   children,
 }) => {
-  const router = useRouter();
-  const selectedMenu = router.pathname;
+  const router = useRouter()
+  const selectedMenu = router.pathname
 
   return (
     <main className={styles.dashboardContainer}>
@@ -27,20 +27,20 @@ export const DashboardLayout: React.FC<React.PropsWithChildren> = ({
             {
               key: `/dashboard`,
               icon: <FileOutlined />,
-              label: `Файлы`,
-              onClick: () => router.push("/dashboard"),
+              label: `Files`,
+              onClick: () => router.push('/dashboard'),
             },
             {
               key: `/dashboard/photos`,
               icon: <FileImageOutlined />,
-              label: `Фото`,
-              onClick: () => router.push("/dashboard/photos"),
+              label: `Photo`,
+              onClick: () => router.push('/dashboard/photos'),
             },
             {
               key: `/dashboard/trash`,
               icon: <DeleteOutlined />,
-              label: `Корзина`,
-              onClick: () => router.push("/dashboard/trash"),
+              label: `Recycle bin`,
+              onClick: () => router.push('/dashboard/trash'),
             },
           ]}
         />
@@ -48,5 +48,5 @@ export const DashboardLayout: React.FC<React.PropsWithChildren> = ({
 
       <div className="container">{children}</div>
     </main>
-  );
-};
+  )
+}

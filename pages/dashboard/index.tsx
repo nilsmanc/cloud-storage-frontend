@@ -5,13 +5,24 @@ import React from 'react'
 import * as Api from '@/api'
 import { FileItem } from '@/api/dto/files.dto'
 import { DashboardLayout } from '@/layouts/DashboardLayout'
+import { Header } from '@/components/Header'
+import { Layout } from 'antd'
 
 interface Props {
   items: FileItem[]
 }
 
 const DashboardPage: NextPage<Props> = ({ items }) => {
-  return <DashboardLayout></DashboardLayout>
+  return (
+    <DashboardLayout>
+      <Header />
+      <h1>Dashboard Private</h1>
+    </DashboardLayout>
+  )
+}
+
+DashboardPage.getLayout = (page: React.ReactNode) => {
+  return <Layout title="Dashboard / Main">{page}</Layout>
 }
 
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
