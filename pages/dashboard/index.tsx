@@ -5,7 +5,6 @@ import React from 'react'
 import * as Api from '@/api'
 import { FileItem } from '@/api/dto/files.dto'
 import { DashboardLayout } from '@/layouts/DashboardLayout'
-import { Header } from '@/components/Header'
 import { Layout } from 'antd'
 
 interface Props {
@@ -15,8 +14,7 @@ interface Props {
 const DashboardPage: NextPage<Props> = ({ items }) => {
   return (
     <DashboardLayout>
-      <Header />
-      <h1>Dashboard Private</h1>
+      <Files items={items} withActions />
     </DashboardLayout>
   )
 }
